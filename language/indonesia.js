@@ -137,6 +137,7 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ > evaluate
 ├ $ exec
 ├ => exec
+├ ${prefix}quoted
 ├ ${prefix}setmenu [query]
 ├ ${prefix}setmenu templateLocation
 ├ ${prefix}setmenu templateTenor
@@ -146,6 +147,8 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}listcmd
 ├ ${prefix}lockcmd
 ├ ${prefix}join [link]
+├ ${prefix}block
+├ ${prefix}unblock
 ├ ${prefix}self
 ├ ${prefix}public [only bot]
 ├ ${prefix}del [pesan bot]
@@ -155,6 +158,9 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}sewa
 ├ ${prefix}premium
 ├ ${prefix}donasi
+├ ${prefix}liatgc
+├ ${prefix}listpc
+├ ${prefix}listonline
 ╰❒
 
 ╭─❒ 「 Group 」 💉
@@ -165,6 +171,11 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}tagall [text]
 ├ ${prefix}jodohku [text]
 ├ ${prefix}jadian [text]
+├ ${prefix}halah
+├ ${prefix}hilih
+├ ${prefix}huluh
+├ ${prefix}heleh
+├ ${prefix}holoh
 ╰❒ ${prefix}hidetag [text]
 
 ╭─❒ 「 Anime 」 💉
@@ -194,7 +205,6 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 ├ ${prefix}togif [sticker]
 ├ ${prefix}tomp4 [sticker]
 ├ ${prefix}emojimix [emot]
-├ ${prefix}removebg [image]
 ╰❒ ${prefix}toimg [reply sticker]
 
 
@@ -580,14 +590,42 @@ exports.listMenu = (time, salam, pushname, prefix) => {
 
 
 ╭─❒ 「 Others 」💉
-├ ${prefix}kalkulator
-├ ${prefix}smeme [text]
-├ ${prefix}memegen [text|text]
-╰❒
+├⭔ ${prefix}nomorhoki
+│⭔ ${prefix}artimimpi
+│⭔ ${prefix}artinama
+│⭔ ${prefix}ramaljodoh
+│⭔ ${prefix}ramaljodohbali
+│⭔ ${prefix}suamiistri
+│⭔ ${prefix}ramalcinta
+│⭔ ${prefix}cocoknama
+│⭔ ${prefix}pasangan
+│⭔ ${prefix}jadiannikah
+│⭔ ${prefix}sifatusaha
+│⭔ ${prefix}rezeki
+│⭔ ${prefix}pekerjaan
+│⭔ ${prefix}nasib
+│⭔ ${prefix}penyakit
+│⭔ ${prefix}tarot
+│⭔ ${prefix}fengshui
+│⭔ ${prefix}haribaik
+│⭔ ${prefix}harisangar
+│⭔ ${prefix}harisial
+│⭔ ${prefix}nagahari
+│⭔ ${prefix}arahrezeki
+│⭔ ${prefix}peruntungan
+│⭔ ${prefix}weton
+│⭔ ${prefix}karakter
+│⭔ ${prefix}keberuntungan
+│⭔ ${prefix}memancing
+│⭔ ${prefix}masasubur
+│⭔ ${prefix}zodiak
+╰❒ ⭔ ${prefix}shio
+
 ╭─❒ 「 TqTo 」 
 ├ Fatih Aridho
 ├ AhmadChen
 ├ ZeeoneOfc
+├ Ameliavoss
 ├ Penyedia Module
 ╰❒ And All Support
 
@@ -696,7 +734,7 @@ exports.welcome = () =>{
 📛 𝖭𝖺𝗆𝖺 :
 🔞 𝖴𝗆𝗎𝗋 :
 📌 Status :
-╰ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 kak ~`
+╰ 𝖯𝖺𝗍𝗎𝗁𝗂 𝗋𝗎𝗅𝖾𝗌 𝗀𝗋𝗎𝗉 𝗒𝖺 beban baru ~`
 }
 exports.leave = () =>{
 	return`Yah beban out 😣 Lain kali kalo baperan ga usah masuk nanti malah jadi sider >.<
@@ -704,7 +742,7 @@ Goodbye Beban🔥`
 }
 exports.source = () =>{
 return`*── 「 SOURCE 」 ──*
-Script : Yt ZeeoneOfc
+Script : Alphabot-Md
 Recode : Kaga Dulu Deh Bro Gw Juga Susah Payah Aowkwowkw
 Note : *MAKA NYA GANTENG KONTOL!:V*
 `
@@ -720,7 +758,6 @@ Kalian bisa donasi ke nomer di bawah!
 Pulsa : 081224413305
 Dana : 089695073357
 Bank Cimb Niaga : Chat Owner!
-Gopay,Dana,Ovo,And All Payment : Scan Qr!
 
 Berapapun donasi kalian akan sangat berarti bagi bot/owner 👍
 Thanks!
@@ -737,14 +774,11 @@ return`*Owner*
 • > evaluate
 • $ exec
 • => exec
+• ${prefix}quoted
 • ${prefix}setmenu [query]
 • ${prefix}setmenu templateLocation
 • ${prefix}setmenu templateTenor
 • ${prefix}sendsesi
-• ${prefix}setcmd
-• ${prefix}delcmd
-• ${prefix}listcmd
-• ${prefix}lockcmd
 • ${prefix}join [link]
 • ${prefix}self
 • ${prefix}public [only bot]
@@ -753,6 +787,8 @@ return`*Owner*
 • ${prefix}sewa
 • ${prefix}premium
 • ${prefix}donasi
+• ${prefix}block
+• ${prefix}unblock
 `}
 
 exports.group = (prefix) =>{
@@ -765,6 +801,11 @@ exports.group = (prefix) =>{
 • ${prefix}hidetag [text]
 • ${prefix}jadian [text]
 • ${prefix}jodohku [text]
+• ${prefix}halah
+• ${prefix}hilih
+• ${prefix}huluh
+• ${prefix}heleh
+• ${prefix}holoh
 `}
 
 exports.anime = (prefix) =>{
@@ -796,7 +837,6 @@ exports.converter = (prefix) =>{
 • ${prefix}tomp4 [sticker]
 • ${prefix}toimg [reply sticker]
 • ${prefix}emojimix [emot+emot]
-• ${prefix}removebg [image]
 `}
 
 exports.effect = (prefix) =>{
@@ -1193,6 +1233,7 @@ return`*Others*
 • ${prefix}smeme [text]
 • ${prefix}memegen [text|text]
 
+
 `
 }
 
@@ -1203,6 +1244,7 @@ exports.tqto = () =>{
 • ZeeoneOfc
 • AhmadChen
 • Fatih Aridho
+• Ameliavoss
 • Penyedia Module
 • And All Support
 `
